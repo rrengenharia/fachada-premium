@@ -1,26 +1,32 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Navbar } from "@/components/landing/Navbar";
+import { Hero } from "@/components/landing/Hero";
+import { Services } from "@/components/landing/Services";
+import { About } from "@/components/landing/About";
+import { Contact } from "@/components/landing/Contact";
 
 export const Route = createFileRoute("/")({
   component: Index,
+  head: () => ({
+    meta: [
+      { title: "Construtora | Pintura, Fachada e Impermeabilização em Salvador" },
+      {
+        name: "description",
+        content:
+          "Empresa de construção civil e manutenção em Salvador-BA. Especialistas em pintura, recuperação de fachada e impermeabilização. Solicite seu orçamento.",
+      },
+    ],
+  }),
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
-}
-
 function Index() {
-  return <PlaceholderIndex />;
+  return (
+    <main className="min-h-screen bg-background text-foreground">
+      <Navbar />
+      <Hero />
+      <Services />
+      <About />
+      <Contact />
+    </main>
+  );
 }
