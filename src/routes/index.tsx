@@ -9,7 +9,7 @@ export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "Construtora | Pintura, Fachada e Impermeabilização em Salvador" },
+      { title: "RR Engenharia | Pintura, Fachada e Impermeabilização em Camaçari" },
       {
         name: "description",
         content:
