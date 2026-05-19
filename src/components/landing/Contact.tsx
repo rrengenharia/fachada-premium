@@ -3,7 +3,7 @@ import { useState } from "react";
 
 const info = [
   { icon: Phone, label: "Telefone", value: "(71) 98428-9200", href: "tel:+5571984289200" },
-  { icon: MapPin, label: "Localização", value: "Salvador - BA\n[Endereço completo]" },
+  { icon: MapPin, label: "Localização", value: "Rua do Alecrim, 36C - Camaçari" },
   { icon: Mail, label: "E-mail", value: "contato@empresa.com", href: "mailto:contato@empresa.com" },
   { icon: Clock, label: "Horário de Atendimento", value: "Seg a Sex: 08h às 17h\nSábado: 08h às 12h" },
 ];
