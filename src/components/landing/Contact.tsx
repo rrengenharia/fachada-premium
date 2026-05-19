@@ -113,7 +113,7 @@ export function Contact() {
 
       <footer className="mt-24 border-t border-border pt-8">
         <div className="container mx-auto px-6 text-center text-sm text-muted-foreground">
-          © {new Date().getFullYear()} Construtora. Todos os direitos reservados.
+          © {new Date().getFullYear()} RR Engenharia · Rua do Alecrim, 36C - Camaçari · Todos os direitos reservados.
         </div>
       </footer>
     </section>
