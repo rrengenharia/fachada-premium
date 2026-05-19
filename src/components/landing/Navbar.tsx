@@ -1,4 +1,5 @@
 import { MessageCircle } from "lucide-react";
+import logoRR from "@/assets/logo-rr.png";
 
 export function Navbar() {
   const scrollToContact = () => {
@@ -9,16 +10,13 @@ export function Navbar() {
     <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-background/60 border-b border-border/50">
       <div className="container mx-auto px-6 h-20 flex items-center justify-between">
         <a href="#" className="flex items-center gap-3 group">
-          <div className="w-11 h-11 rounded-lg bg-white p-1.5 flex items-center justify-center shadow-[var(--shadow-glow)]">
-            <img
-              src="https://images.tcdn.com.br/img/img_prod/1169339/1709241904_1.jpg"
-              alt="RR Engenharia"
-              className="w-full h-full object-contain"
-            />
-          </div>
-          <span className="text-foreground font-bold text-lg tracking-tight">
-            RR <span className="text-primary">ENGENHARIA</span>
-          </span>
+          <img
+            src={logoRR}
+            alt="RR Engenharia"
+            width={1024}
+            height={1024}
+            className="h-14 w-auto object-contain"
+          />
         </a>
 
         <nav className="flex items-center gap-3">
