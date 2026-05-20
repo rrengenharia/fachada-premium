@@ -1,12 +1,5 @@
-import { Phone, MapPin, Mail, Clock, Send, MessageCircle } from "lucide-react";
+import { Phone, MapPin, Mail, MessageCircle } from "lucide-react";
 import { useState } from "react";
-
-const info = [
-  { icon: Phone, label: "Telefone", value: "(71) 98428-9200", href: "tel:+5571984289200" },
-  { icon: MapPin, label: "Localização", value: "Rua do Alecrim, 36C - Camaçari" },
-  { icon: Mail, label: "E-mail", value: "contato@empresa.com", href: "mailto:contato@empresa.com" },
-  { icon: Clock, label: "Horário de Atendimento", value: "Seg a Sex: 08h às 17h\nSábado: 08h às 12h" },
-];
 
 export function Contact() {
   const [sent, setSent] = useState(false);
@@ -19,103 +12,78 @@ export function Contact() {
   };
 
   return (
-    <section id="contato" className="py-24 sm:py-32">
-      <div className="container mx-auto px-6">
-        <div className="max-w-2xl mb-16">
-          <span className="text-xs font-semibold tracking-widest uppercase text-primary">
-            Fale Conosco
-          </span>
-          <h2 className="mt-4 text-4xl sm:text-5xl font-bold tracking-tight text-foreground">
-            Vamos conversar sobre sua obra
+    <>
+      <section id="contato" className="bg-primary text-white py-20 px-5 text-center">
+        <div className="max-w-2xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+            Pronto para iniciar sua obra?
           </h2>
-          <p className="mt-5 text-lg text-muted-foreground">
-            Solicite um orçamento sem compromisso. Respondemos em até 24h úteis.
+          <p className="text-white/85 mb-10">
+            Preencha o formulário abaixo e um de nossos engenheiros entrará em contato em até 24 horas.
           </p>
-        </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
-          <div className="space-y-4">
-            {info.map((item) => {
-              const Content = (
-                <div className="flex items-start gap-4 p-6 rounded-xl bg-card border border-border hover:border-primary/40 transition-colors">
-                  <div className="w-11 h-11 shrink-0 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center">
-                    <item.icon className="w-5 h-5 text-primary" />
-                  </div>
-                  <div>
-                    <div className="text-xs font-semibold tracking-wider uppercase text-muted-foreground">
-                      {item.label}
-                    </div>
-                    <div className="mt-1 text-foreground font-medium whitespace-pre-line">
-                      {item.value}
-                    </div>
-                  </div>
-                </div>
-              );
-              return item.href ? (
-                <a key={item.label} href={item.href} className="block">{Content}</a>
-              ) : (
-                <div key={item.label}>{Content}</div>
-              );
-            })}
-
-            <a
-              href="https://wa.me/5571984289200"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 w-full p-4 rounded-xl bg-whatsapp text-whatsapp-foreground font-semibold hover:opacity-90 transition-opacity"
+          <form onSubmit={handleSubmit} className="space-y-4 text-left">
+            <input
+              required
+              type="text"
+              placeholder="Seu Nome"
+              className="w-full px-4 py-4 rounded-md bg-white text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary-glow"
+            />
+            <input
+              required
+              type="email"
+              placeholder="Seu E-mail"
+              className="w-full px-4 py-4 rounded-md bg-white text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary-glow"
+            />
+            <input
+              type="tel"
+              placeholder="Seu Telefone"
+              className="w-full px-4 py-4 rounded-md bg-white text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary-glow"
+            />
+            <textarea
+              required
+              rows={5}
+              placeholder="Descreva seu projeto..."
+              className="w-full px-4 py-4 rounded-md bg-white text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary-glow resize-none"
+            />
+            <button
+              type="submit"
+              className="w-full py-4 rounded-md bg-primary-glow hover:bg-primary-deep text-white font-bold text-base transition-colors"
             >
-              <MessageCircle className="w-5 h-5" />
-              Conversar pelo WhatsApp
+              {sent ? "Mensagem enviada!" : "Enviar Mensagem"}
+            </button>
+          </form>
+
+          <div className="mt-12 grid sm:grid-cols-3 gap-6 text-sm">
+            <a href="tel:+5571984289200" className="flex flex-col items-center gap-2 hover:text-white/80 transition">
+              <Phone className="w-5 h-5" />
+              <span>(71) 98428-9200</span>
+            </a>
+            <div className="flex flex-col items-center gap-2">
+              <MapPin className="w-5 h-5" />
+              <span>Rua do Alecrim, 36C - Camaçari</span>
+            </div>
+            <a href="mailto:contato@rrengenharia.com" className="flex flex-col items-center gap-2 hover:text-white/80 transition">
+              <Mail className="w-5 h-5" />
+              <span>contato@rrengenharia.com</span>
             </a>
           </div>
 
-          <form
-            onSubmit={handleSubmit}
-            className="p-8 rounded-2xl bg-card border border-border shadow-[var(--shadow-card)] space-y-5"
+          <a
+            href="https://wa.me/5571984289200"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-8 inline-flex items-center gap-2 px-6 py-3 rounded-md bg-whatsapp text-whatsapp-foreground font-semibold hover:opacity-90 transition"
           >
-            <div>
-              <label className="text-sm font-medium text-foreground mb-2 block">Nome</label>
-              <input
-                required
-                type="text"
-                placeholder="Seu nome completo"
-                className="w-full px-4 py-3 rounded-lg bg-input border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition"
-              />
-            </div>
-            <div>
-              <label className="text-sm font-medium text-foreground mb-2 block">E-mail</label>
-              <input
-                required
-                type="email"
-                placeholder="seu@email.com"
-                className="w-full px-4 py-3 rounded-lg bg-input border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition"
-              />
-            </div>
-            <div>
-              <label className="text-sm font-medium text-foreground mb-2 block">Mensagem</label>
-              <textarea
-                required
-                rows={5}
-                placeholder="Conte-nos sobre o seu projeto..."
-                className="w-full px-4 py-3 rounded-lg bg-input border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition resize-none"
-              />
-            </div>
-            <button
-              type="submit"
-              className="w-full inline-flex items-center justify-center gap-2 px-6 py-4 rounded-lg bg-gradient-to-r from-primary to-primary-glow text-primary-foreground font-semibold shadow-[var(--shadow-glow)] hover:opacity-95 transition"
-            >
-              {sent ? "Mensagem enviada!" : "Enviar Mensagem"}
-              {!sent && <Send className="w-4 h-4" />}
-            </button>
-          </form>
+            <MessageCircle className="w-5 h-5" />
+            Fale no WhatsApp
+          </a>
         </div>
-      </div>
+      </section>
 
-      <footer className="mt-24 border-t border-border pt-8">
-        <div className="container mx-auto px-6 text-center text-sm text-muted-foreground">
-          © {new Date().getFullYear()} RR Engenharia · Rua do Alecrim, 36C - Camaçari · Todos os direitos reservados.
-        </div>
+      <footer className="bg-footer text-footer-foreground text-center py-6 text-sm px-5">
+        © {new Date().getFullYear()} RR Engenharia. Todos os direitos reservados. · Rua do Alecrim, 36C - Camaçari · Construindo Confiança.
       </footer>
-    </section>
+    </>
   );
 }

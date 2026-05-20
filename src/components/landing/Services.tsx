@@ -1,56 +1,42 @@
-import { Paintbrush, Building2, Droplets, Wrench } from "lucide-react";
+import { Building2, Home, Wrench } from "lucide-react";
 
 const services = [
   {
-    icon: Paintbrush,
-    title: "Pintura Geral",
-    desc: "Pintura residencial e comercial de alta qualidade, com acabamento premium e materiais selecionados para máxima durabilidade.",
-  },
-  {
     icon: Building2,
-    title: "Recuperação de Fachada",
-    desc: "Restauração estrutural, reparo de trincas e limpeza profunda. Devolvemos vida e valorização ao seu imóvel.",
+    title: "Obras Comerciais",
+    desc: "Construção e adequação de galpões, escritórios e lojas com foco em prazo e custo-benefício para o seu negócio.",
   },
   {
-    icon: Droplets,
-    title: "Impermeabilização",
-    desc: "Vedação e impermeabilização avançada para telhados, paredes e estruturas, protegendo contra infiltrações.",
+    icon: Home,
+    title: "Obras Residenciais",
+    desc: "Projetos residenciais de alto padrão, desde a fundação até o acabamento fino, entregando o lar dos seus sonhos.",
   },
   {
     icon: Wrench,
-    title: "Serviços em Geral",
-    desc: "Alvenaria, manutenção predial e reformas civis executadas por equipe técnica especializada e responsável.",
+    title: "Reformas e Retrofit",
+    desc: "Modernização de infraestruturas existentes, revitalização de fachadas e adequação às novas normas técnicas.",
   },
 ];
 
 export function Services() {
   return (
-    <section id="servicos" className="py-24 sm:py-32 relative">
-      <div className="container mx-auto px-6">
-        <div className="max-w-2xl mb-16">
-          <span className="text-xs font-semibold tracking-widest uppercase text-primary">
-            Nossos Serviços
-          </span>
-          <h2 className="mt-4 text-4xl sm:text-5xl font-bold tracking-tight text-foreground">
-            Soluções completas para sua obra
-          </h2>
-          <p className="mt-5 text-lg text-muted-foreground">
-            Atuamos em todas as frentes da construção e manutenção civil, com técnica,
-            segurança e compromisso com o prazo.
-          </p>
-        </div>
+    <section id="servicos" className="py-20 px-5 bg-surface-soft text-center">
+      <div className="max-w-[1200px] mx-auto">
+        <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-12">
+          Nossos Serviços
+        </h2>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((s) => (
             <article
               key={s.title}
-              className="group relative p-7 rounded-2xl bg-card border border-border hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 shadow-[var(--shadow-card)]"
+              className="bg-card rounded-lg p-10 shadow-[var(--shadow-card)] border-b-4 border-primary hover:-translate-y-2 hover:shadow-[0_10px_25px_rgba(0,0,0,0.1)] transition-all"
             >
-              <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:border-primary transition-colors">
-                <s.icon className="w-6 h-6 text-primary group-hover:text-primary-foreground transition-colors" />
+              <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-primary/10 flex items-center justify-center">
+                <s.icon className="w-8 h-8 text-primary-glow" />
               </div>
-              <h3 className="text-xl font-semibold text-foreground mb-3">{s.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
+              <h3 className="text-xl font-semibold text-primary mb-3">{s.title}</h3>
+              <p className="text-muted-foreground leading-relaxed">{s.desc}</p>
             </article>
           ))}
         </div>

@@ -1,66 +1,49 @@
-import { CheckCircle2 } from "lucide-react";
+import { Check } from "lucide-react";
 import aboutImage from "@/assets/about-team.jpg";
 
-const values = [
-  "Equipe técnica qualificada e certificada",
-  "Materiais de primeira linha e fornecedores parceiros",
-  "Cumprimento rigoroso de prazos e orçamentos",
-  "Atendimento personalizado em cada projeto",
+const features = [
+  {
+    title: "Rigor nos Prazos",
+    desc: "Utilizamos metodologias avançadas de gestão de projetos para garantir que sua obra seja entregue exatamente no prazo estipulado em contrato.",
+  },
+  {
+    title: "Qualidade Superior",
+    desc: "Trabalhamos apenas com materiais certificados e fornecedores homologados, garantindo a durabilidade e segurança da estrutura.",
+  },
+  {
+    title: "Engenharia Transparente",
+    desc: "Você acompanha cada etapa da obra com relatórios semanais, cronogramas atualizados e controle financeiro rigoroso.",
+  },
 ];
 
 export function About() {
   return (
-    <section id="quem-somos" className="py-24 sm:py-32 bg-card/30 border-y border-border">
-      <div className="container mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <div className="relative">
-            <div className="aspect-[4/5] rounded-2xl overflow-hidden border border-border shadow-[var(--shadow-card)]">
-              <img
-                src={aboutImage}
-                alt="Profissional da nossa equipe em obra"
-                loading="lazy"
-                width={1024}
-                height={1024}
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="absolute -bottom-6 -right-6 hidden sm:block p-6 rounded-2xl bg-gradient-to-br from-primary to-primary-glow shadow-[var(--shadow-glow)] max-w-[200px]">
-              <div className="text-4xl font-bold text-primary-foreground">15+</div>
-              <div className="text-sm text-primary-foreground/80 mt-1">
-                anos transformando obras em legados
+    <section id="sobre" className="py-20 px-5">
+      <div className="max-w-[1200px] mx-auto flex flex-col lg:flex-row items-center gap-12">
+        <div className="flex-1 w-full rounded-lg overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.1)]">
+          <img
+            src={aboutImage}
+            alt="Equipe RR Engenharia em obra"
+            loading="lazy"
+            className="w-full h-auto block"
+          />
+        </div>
+
+        <div className="flex-1">
+          <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-8">
+            Por que escolher a RR Engenharia?
+          </h2>
+
+          <div className="space-y-6">
+            {features.map((f) => (
+              <div key={f.title}>
+                <h4 className="flex items-center gap-2 text-lg font-semibold text-primary mb-1">
+                  <Check className="w-5 h-5 text-primary-glow" />
+                  {f.title}
+                </h4>
+                <p className="text-muted-foreground leading-relaxed">{f.desc}</p>
               </div>
-            </div>
-          </div>
-
-          <div>
-            <span className="text-xs font-semibold tracking-widest uppercase text-primary">
-              Quem Somos
-            </span>
-            <h2 className="mt-4 text-4xl sm:text-5xl font-bold tracking-tight text-foreground">
-              Tradição, técnica e compromisso
-            </h2>
-
-            <div className="mt-6 space-y-5 text-muted-foreground leading-relaxed">
-              <p>
-                Somos uma empresa de construção civil e manutenção predial dedicada a
-                entregar excelência em cada projeto. Nossa história foi construída sobre
-                o respeito ao cliente, à equipe e ao prazo combinado.
-              </p>
-              <p>
-                Nossa missão é proteger e valorizar o seu patrimônio com serviços de
-                pintura, fachada e impermeabilização executados com rigor técnico e
-                acabamento impecável.
-              </p>
-            </div>
-
-            <ul className="mt-8 grid sm:grid-cols-2 gap-3">
-              {values.map((v) => (
-                <li key={v} className="flex items-start gap-3 text-sm text-foreground">
-                  <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                  <span>{v}</span>
-                </li>
-              ))}
-            </ul>
+            ))}
           </div>
         </div>
       </div>
