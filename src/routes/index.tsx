@@ -9,11 +9,11 @@ export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "RR Engenharia | Pintura, Fachada e Impermeabilização em Camaçari" },
+      { title: "RR ENGENHARIA | Impermeabilização, Fachadas e Reformas em Salvador" },
       {
         name: "description",
         content:
-          "Empresa de construção civil e manutenção em Salvador-BA. Especialistas em pintura, recuperação de fachada e impermeabilização. Solicite seu orçamento.",
+          "Especialistas em impermeabilização, recuperação de fachadas, obras comerciais e residenciais em Salvador e Região Metropolitana. Solicite seu orçamento.",
       },
     ],
   }),

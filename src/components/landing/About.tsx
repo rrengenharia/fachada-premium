@@ -1,20 +1,4 @@
-import { Check } from "lucide-react";
 import aboutImage from "@/assets/about-team.jpg";
-
-const features = [
-  {
-    title: "Rigor nos Prazos",
-    desc: "Utilizamos metodologias avançadas de gestão de projetos para garantir que sua obra seja entregue exatamente no prazo estipulado em contrato.",
-  },
-  {
-    title: "Qualidade Superior",
-    desc: "Trabalhamos apenas com materiais certificados e fornecedores homologados, garantindo a durabilidade e segurança da estrutura.",
-  },
-  {
-    title: "Engenharia Transparente",
-    desc: "Você acompanha cada etapa da obra com relatórios semanais, cronogramas atualizados e controle financeiro rigoroso.",
-  },
-];
 
 export function About() {
   return (
@@ -30,21 +14,21 @@ export function About() {
         </div>
 
         <div className="flex-1">
-          <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-8">
-            Por que escolher a RR Engenharia?
+          <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-6">
+            Sobre a RR ENGENHARIA
           </h2>
-
-          <div className="space-y-6">
-            {features.map((f) => (
-              <div key={f.title}>
-                <h4 className="flex items-center gap-2 text-lg font-semibold text-primary mb-1">
-                  <Check className="w-5 h-5 text-primary-glow" />
-                  {f.title}
-                </h4>
-                <p className="text-muted-foreground leading-relaxed">{f.desc}</p>
-              </div>
-            ))}
-          </div>
+          <p className="text-lg text-muted-foreground mb-5 text-justify leading-relaxed">
+            Somos especialistas em engenharia civil, com forte atuação em toda a Região
+            Metropolitana de Salvador. Nosso compromisso é entregar obras com máxima
+            qualidade, alinhando excelência técnica à absoluta pontualidade.
+          </p>
+          <p className="text-lg text-muted-foreground text-justify leading-relaxed">
+            Entendemos que cada projeto, seja uma reforma residencial, recuperação de
+            fachada ou uma nova obra comercial, é um sonho ou um investimento crucial
+            para nossos clientes. Por isso, baseamos nosso trabalho na confiança e
+            transparência, utilizando materiais certificados e oferecendo acompanhamento
+            rigoroso do início ao fim da obra.
+          </p>
         </div>
       </div>
     </section>
